@@ -126,4 +126,3 @@ def saut_max_naif(li):
     return saut_max
 
 
-print(saut_max_naif([2.0,0.2,3.0,5.3,2.0]))

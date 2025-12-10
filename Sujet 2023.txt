@@ -73,6 +73,58 @@ Partie 2 - /
 
 Question 6 : 
 
+def valeur(li,saut):
+    return li[saut[1]]-li[saut[0]]
+Voici une fonctione renvoyant la valeur du saut "saut" pour la liste li. Il est de complexité O(1)
+
+
+Question 7 :
+
+On pourrait prendre comme exemple cette liste : [1.6, 3.6, 1.0, 3.0]
+Qui contient deux saut (2,3) et (0,1) de valeur maximales, à savoir 3.6-1.6 et 3-1 = 2
+
+
+Question 8 :
+
+Prenons une liste li=[1.5, 5.9, 3.1, 0.1]
+On constate ici que li contient 4 éléments, dont le plus grand est 5.9 et le plus petit est 0.1.
+On sait aussi que dans un saut, le couple (i,j) doit respecter la règle suivante : 0 =< i =< j < ln(li),
+et que la valeur du saut se calcul avec li[j] - li[i]. 
+Cela signifie donc que le nombre à l'indice j, qui est aussi le plus grand des deux, ne doit pas se trouver avant celui à l'indice i, or dans notre cas, 5.9 se situe à l'indice j=1 et 0.1 à l'indice i=3.
+Autrement dit, ici j < i, ce qui invalide la règle précédemment posée.
+
+
+
+Question 9 : 
+
+def saut_max_naif(li):
+    saut_max = (0,0)
+    val_max = li[0]-li[0]
+    n = len(li)
+    for i in range(n):
+        for j in range(i, n):
+            if li[j]-li[i] > val_max:
+                saut_max = (i,j)
+                val_max = li[j]-li[i]
+    return saut_max
+
+Voici une fonction calculant tous les saut possible respectant la règle imposée, et renvoyant le plus grand.
+A noter que ce programme est de complexité O(n²), car il contient de boucle imbriquées
+
+
+
+Question 10 : 
+
+
+mk 
+
+
+
+
+
+
+
+
 
 
 
