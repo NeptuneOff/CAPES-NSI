@@ -110,5 +110,20 @@ def lettre_majoritaire(ch):
 
 
 
-print(lettre_majoritaire("abaacdddded"))
+def valeur(li,saut):
+    return li[saut[1]]-li[saut[0]]
 
+
+def saut_max_naif(li):
+    saut_max = (0,0)
+    val_max = li[0]-li[0]
+    n = len(li)
+    for i in range(n):
+        for j in range(i, n):
+            if li[j]-li[i] > val_max:
+                saut_max = (i,j)
+                val_max = li[j]-li[i]
+    return saut_max
+
+
+print(saut_max_naif([2.0,0.2,3.0,5.3,2.0]))
