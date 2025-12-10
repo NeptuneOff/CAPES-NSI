@@ -1,0 +1,79 @@
+Partie 1 - / 
+
+
+Question 1 : 
+Voici la fonction Fibonacci
+
+def fibonacci(n):
+    f0 = 0
+    f1 = 1
+    flist = [f0,f1]
+
+    for i in range(2,n):
+        flist.append(flist[i-1]+flist[i-2])
+    return flist
+
+
+
+Question 2 :
+voici la fonction indice_min:
+
+def indice_min(li):
+    int_min = li[0]
+    i_min = 0
+    for i in range(len(li)):
+        if li[i] < int_min:
+            int_min=li[i]
+            i_min = i
+    return i_min
+
+
+Question 3 :
+la fonction indice_min[1,0,2,0] renverra 1, car c'est la valeur 0, à l'indice 1 du tableau, qui est la plus petite, et que ma fonction prend le premier minimum.
+
+
+Question 4 : 
+def zero_sur_lignes(mat):
+
+    for line in mat:
+        is_zero = False
+        for number in line:
+            if number == 0: 
+                is_zero = True
+                break
+        if is_zero == False:
+            return False
+    return True
+
+Avantage de cette méthode, une fois que l'on a vu au moins un élément dans une ligne, on passe à celle d'après directement, gain de temps et de ressources.
+
+
+Question 5 : 
+def lettre_majoritaire(ch):
+    count = {}
+    l_max = ""  #letter la plus présente
+    c_max = 0   #Nombre d'apparition de la lettre la plus présente
+    for letter in ch:
+        if letter in count:
+            count[letter] +=1
+        else :
+            count[letter] = 1
+    
+    for letter in count:
+        if count[letter] > c_max:
+            c_max = count[letter]
+            l_max = letter
+
+    return l_max
+
+
+----------------------------------------------------------------------------------------
+
+Partie 2 - /
+
+Question 6 : 
+
+
+
+
+
